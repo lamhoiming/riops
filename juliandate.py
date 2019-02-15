@@ -2,7 +2,7 @@
 # Taken from Enno Middleberg's site of useful astronomical python references: http://www.astro.rub.de/middelberg/python/python.html
 # Adopted by Lam Hoi Ming 2019-02-14
 def gd2jd(date):
-    
+    # This will return the year [0] and the julian day in that year [1] as int!
     yyyy = int(date[0:4])
     mm = int(date[4:6])
     dd = int(date[6:8])
@@ -24,7 +24,7 @@ def gd2jd(date):
     for y in range(mm - 1):
         daysum = daysum + days[y]
     ju_day = daysum + dd
-    return ju_day
+    return [yyyy,ju_day]
     print('year =', yyyy, '.', 'julian day =', ju_day, '.', 'January 1st is set as 1.')
 
 #%% Julian day to yyyyddmm format
