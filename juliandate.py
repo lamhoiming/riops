@@ -19,12 +19,13 @@ def gd2jd(date):
     else:
         days=daylist2
     
-    # Counting from zero (python convention)
+    # Counting from January 1st as 1 (python convention)
     daysum = 0
     for y in range(mm - 1):
         daysum = daysum + days[y]
-    ju_day = daysum + dd - 1
-    print('year =', yyyy, '.', 'julian day =', ju_day, '.', 'January 1st is set as zero.')
+    ju_day = daysum + dd
+    return ju_day
+    print('year =', yyyy, '.', 'julian day =', ju_day, '.', 'January 1st is set as 1.')
 
 #%% Julian day to yyyyddmm format
 # Task to convert a list of julian dates to gregorian dates
